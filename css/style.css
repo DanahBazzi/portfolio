@@ -1,0 +1,230 @@
+/*set the font, font size, background color*/
+body {
+    font-family: "Century Gothic", "Trebuchet", sans-serif;
+    font-size: 1em; 
+    background-color: #fff5ee;  
+}
+
+/*style images to acceptable width and height*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+/*set the background color for the header*/
+header {
+    background-color: #fff0f5;
+}
+
+/*style h1 for home page*/
+#portfolio_name {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 2em;
+}
+
+/*skip to main content link*/
+.skip_to_main_content {
+    position: absolute;
+    top: -20px;
+}
+
+/*style the navigation bar*/
+nav {
+    font-family: "Tahoma", sans-serif;
+    font-size: 15px;
+    border-top: 3px solid #dda0dd;
+    border-bottom: 3px solid #dda0dd;
+}
+
+ul.webpage_navigation {
+    background-color: #fffaf0;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    color: #000000;
+}
+
+.webpage_navigation li {    
+    padding: 2px;
+}
+
+li:nth-child(odd) {
+    background-color: #faf0e6;
+}
+
+a:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+.webpage_navigation li:hover {
+    font-weight: bold;
+    color: #800080;
+}
+
+.webpage_navigation li:active {
+    text-decoration: underline;
+    color: #800080;
+}
+
+/*style each pages' headings*/
+#welcome_heading, #drawings_heading, #paintings_heading, #textiles_heading,
+#pastel_heading, #pencil_heading, #watercolors_heading, #acrylics_heading, 
+#phoebe_heading, #yarn_heading, #sewing_heading, #felting_heading {
+    background-color: #fff0f5;
+    border-bottom: 3px solid #dda0dd;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+}
+
+/*animate intro headings for each page*/
+#welcome_heading, #drawings_heading, 
+#paintings_heading, #textiles_heading {
+    animation-name: heading_animation;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+}
+
+@keyframes heading_animation {
+    from {
+        font-size: 11px;
+        margin-left: 100%;
+    }
+    to {
+        font-size: 1em;
+        margin-left: 0%;
+    }
+}
+
+/*style headings for pastel, pencils, watercolors, acrylics, knit/crochet*/
+#pastel_heading, #pencil_heading, 
+#watercolors_heading, #acrylics_heading, #phoebe_heading,
+#yarn_heading, #sewing_heading, #felting_heading {
+    border-top: 3px solid #dda0dd;
+}
+
+/*style text for all pages*/
+.intro_text, .drawings_intro, .paintings_intro,
+.drawings_text, .textiles_intro {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*grid application to format home page text and image*/
+.site_intro {
+    display: grid;
+    grid-template-columns: 168px 168px;
+    grid-template-rows: 41px 57px 32px 196px;
+    border-top: 3px solid #dda0dd;
+    border-bottom: 3px solid #dda0dd;
+    background-color:#fff0f5;
+    margin-left: 5px;
+    margin-right: 5px;
+    grid-column-gap: 2px;
+    grid-row-gap: 1px;
+}
+
+#gallery_text {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    padding-top: 12px;
+    padding-left: 5px;
+}
+
+#intro_painting_1 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+}
+
+#intro_painting_2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+}
+
+#intro_drawing_1 {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 2;
+}
+
+#intro_textile_1 {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+}
+
+#intro_painting_1, #intro_painting_2, #intro_drawing_1, #intro_textile_1 {
+    justify-content: center;
+    align-items: center;
+}
+
+/*style images when hovered over*/
+img:hover {
+    opacity: 0.5;
+    border: 2px solid black;
+}
+
+/*style the footer*/
+footer {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: auto;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    background-color: #fff0f5;
+    border-top: 3px solid #dda0dd;
+    border-bottom: 3px solid #dda0dd;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*drawings, paintings, textile art page image galleries*/
+.watercolors, .acrylics, .pencil, .pastels,
+.phoebe, .knit_and_crochet, .sewing {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.watercolors img, .acrylics img, .pencil img, .pastels img,
+.phoebe img, .knit_and_crochet img, .sewing img {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+}
+
+/*prefers reduced motion media query*/
+@media screen and (prefers-reduced-motion: reduce){
+    #welcome_heading, #drawings_heading, 
+    #paintings_heading, #textiles_heading{
+        animation-name: none;
+        animation-duration: none;
+        animation-iteration-count: none;
+    }
+}
+
+/*style the nav for the current page*/
+.current {
+    background-color: #f9d5e5;
+    padding: 2px;
+    font-weight: bold;
+    border: 1px solid #800080;
+}
+
+
+
+
+
